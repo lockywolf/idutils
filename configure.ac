@@ -2,7 +2,7 @@
 # Process this file with autoconf to produce a configure script.
 
 AC_PREREQ([2.69])
-AC_INIT([idutils],[m4_esyscmd(build-aux/git-version-gen .tarball-version)],[bug-idutils@gnu.org])
+AC_INIT([idutils], 4.6.1, [m4_esyscmd(build-aux/git-version-gen .tarball-version)],[bug-idutils@gnu.org])
 
 AC_CONFIG_AUX_DIR(build-aux)
 AM_INIT_AUTOMAKE([1.11 no-dist-gzip dist-xz color-tests parallel-tests
