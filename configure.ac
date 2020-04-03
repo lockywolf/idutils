@@ -1,9 +1,8 @@
 #                                               -*- Autoconf -*-
 # Process this file with autoconf to produce a configure script.
 
-AC_PREREQ(2.61)
-AC_INIT([idutils], m4_esyscmd([build-aux/git-version-gen .tarball-version]),
-	[bug-idutils@gnu.org])
+AC_PREREQ([2.69])
+AC_INIT([idutils],[m4_esyscmd(build-aux/git-version-gen .tarball-version)],[bug-idutils@gnu.org])
 
 AC_CONFIG_AUX_DIR(build-aux)
 AM_INIT_AUTOMAKE([1.11 no-dist-gzip dist-xz color-tests parallel-tests
@@ -106,7 +105,7 @@ AC_TYPE_SIZE_T
 AC_CHECK_TYPES(ptrdiff_t)
 
 AM_GNU_GETTEXT([external], [need-ngettext])
-AM_GNU_GETTEXT_VERSION([0.18])
+AM_GNU_GETTEXT_VERSION([0.20])
 
 AC_CONFIG_FILES([
                  po/Makefile.in

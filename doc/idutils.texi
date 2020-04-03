@@ -23,12 +23,12 @@
 @format
 START-INFO-DIR-ENTRY
 * ID utilities: (idutils).             Indexing and searching utilities.
+* fid: (idutils)fid invocation.        Listing a file's tokens.
+* fnid: (idutils)fnid invocation.      Looking up file names.
+* gid: (idutils)gid invocation.        Token-based grep.
+* xtokid: (idutils)xtokid invocation.  Testing mkid scanners.
 * mkid: (idutils)mkid invocation.      Creating an ID database.
 * lid: (idutils)lid invocation.        Matching words and patterns.
-* fid: (idutils)fid invocation.        Listing a file's tokens.
-* gid: (idutils)gid invocation.        Token-based grep.
-* fnid: (idutils)fnid invocation.      Looking up file names.
-* xtokid: (idutils)xtokid invocation.  Testing mkid scanners.
 END-INFO-DIR-ENTRY
 @end format
 @end ifinfo
@@ -80,8 +80,8 @@ This manual documents version @value{VERSION} of the ID utilities.
 * mkid invocation::             Creating an ID database.
 * lid invocation::              Querying an ID database by token.
 * fid invocation::              Listing a file's tokens.
-* gid invocation::              Token-based grep
 * fnid invocation::             Looking up file names.
+* gid invocation::              Token-based grep
 * xtokid invocation::           Testing language scanners.
 * Past and Future::             History and future directions.
 * Index::                       General index.
@@ -169,21 +169,21 @@ sometimes difficult to infer.  @xref{Bugs, , , gcc, GNU CC}.
 @node Quick start
 @chapter Quick Start Procedure
 
-@table @bullet
+@table @asis
 
-Unpack the distribution.
+@item Unpack the distribution.
 
-Type @file{./configure}
+@item Type @file{./configure}
 
-Type @samp{make}
+@item Type @samp{make}
 
-Type @samp{make install} as a user with the appropriate privileges
+@item Type @samp{make install} as a user with the appropriate privileges
 (e.g., @samp{bin} or perhaps even @samp{root}).
 
-Type @samp{cd /usr/include; mkid} to build an ID database covering
+@item Type @samp{cd /usr/include; mkid} to build an ID database covering
 all of the system header files.
 
-Type @samp{lid FILE}, then @samp{gid strtok}, then @samp{aid stdout}.
+@item Type @samp{lid FILE}, then @samp{gid strtok}, then @samp{aid stdout}.
 
 @end table
 
@@ -207,11 +207,11 @@ rather than repeating them for each program.
 
 @menu
 * Universal options::     Options common to all programs.
-* Extraction options::    Options for programs that extract tokens from source files.
-* Walker options::        Options for programs that walk file and directory trees.
 * Reading options::       Options for programs that read ID databases.
 * Writing options::       Options for programs that write ID databases.
+* Walker options::        Options for programs that walk file and directory trees.
 * File listing options::  Options for programs that list file names.
+* Extraction options::    Options for programs that extract tokens from source files.
 @end menu
 
 @c ************* gkm *********************************************************
@@ -316,7 +316,7 @@ One or more file or directory names may appear in @var{names}.  The file
 tree walker will stop short at these files and directories and their
 contents will not be scanned.
 
-@itemx --files0-from=@var{FILE}
+@item --files0-from=@var{FILE}
 @opindex --files0-from=@var{FILE}
 Rather than processing files named on the command line, process those
 named in file @var{FILE}; each name is terminated by a null byte.
@@ -1362,14 +1362,14 @@ with the other GNU package names.
 @cindex future
 Future releases of @code{idutils} might include:
 
-@table @bullet
+@table @asis
 
-an optional coupling with GNU @code{grep}, so that @code{grep} can use
+@item an optional coupling with GNU @code{grep}, so that @code{grep} can use
 an ID database for hints
 
-a @code{cscope} work-alike query interface
+@item a @code{cscope} work-alike query interface
 
-incremental update of the ID database.
+@item incremental update of the ID database.
 
 @end table
 
